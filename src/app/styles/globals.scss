@@ -1,7 +1,26 @@
 @use '@/styles/variables.scss';
 @use '@/styles/fonts.scss';
+@use '@/styles/mixins.scss';
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+
+  @include mixins.respond-to('big-desktop-up') {
+    font-size: 14px;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 
 body {
-  color: variables.$gray-1;
-  font-family: 'Roboto';
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
 }
