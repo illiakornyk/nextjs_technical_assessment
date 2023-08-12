@@ -1,3 +1,4 @@
+import Header from '@/components/header';
 import React from 'react';
 
 type LayoutProps = {
@@ -13,7 +14,7 @@ const Layout: React.FC<LayoutProps> = ({
     // Render the standard layout
     return (
       <>
-        <header>header</header>
+        <Header />
         <main>{children}</main>
         <footer>footer</footer>
       </>
