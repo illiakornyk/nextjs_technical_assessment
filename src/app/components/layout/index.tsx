@@ -22,8 +22,8 @@ const Layout: React.FC<LayoutProps> = ({
         <div className={cx('layout__wrapper')}>
           <Header />
           <main>{children}</main>
-          <Footer />
         </div>
+        <Footer />
       </div>
     );
   } else {
