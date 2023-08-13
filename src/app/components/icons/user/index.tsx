@@ -1,19 +1,26 @@
 import React from 'react';
 
+type TIconSize = {
+  width: string;
+  height: string;
+};
+
 interface IUserIconProps {
   color?: string;
-  size?: string;
+  size?: TIconSize | string;
 }
 
 const UserIcon: React.FC<IUserIconProps> = ({
   color = '#000',
   size = '1rem',
 }) => {
+  const width = typeof size === 'string' ? size : size.width;
+  const height = typeof size === 'string' ? size : size.height;
   return (
     <svg
       fill={color}
-      width={size}
-      height={size}
+      width={width}
+      height={height}
       viewBox="0 0 32 32"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"

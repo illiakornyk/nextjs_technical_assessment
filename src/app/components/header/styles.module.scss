@@ -3,7 +3,14 @@
 
 .header {
   display: flex;
+  align-items: baseline;
+  justify-content: space-between;
   width: 100%;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 .header__logo {
@@ -18,8 +25,45 @@
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-weight: 400;
+  padding: 0;
+  display: flex;
+  gap: 2.9rem;
+}
+
+.header__menu-item--features {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
 }
 
 .header__menu-item--contact {
   font-weight: 600;
+}
+
+.header__menu {
+  display: flex;
+  gap: 3.75rem;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+}
+
+.header__actions-button {
+  border: none;
+  background: none;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid variables.$black;
+
+  &:hover {
+    cursor: pointer;
+  }
 }

@@ -1,18 +1,24 @@
 import React from 'react';
 
+type TIconSize = {
+  width: string;
+  height: string;
+};
+
 interface ICartIconProps {
   color?: string;
-  size?: string;
+  size?: TIconSize | string;
 }
-
 const CartIcon: React.FC<ICartIconProps> = ({
   color = '#000',
   size = '1rem',
 }) => {
+  const width = typeof size === 'string' ? size : size.width;
+  const height = typeof size === 'string' ? size : size.height;
   return (
     <svg
-      width={size}
-      height={size}
+      width={width}
+      height={height}
       viewBox="0 0 16 16"
       xmlns="http://www.w3.org/2000/svg"
       fill={color}
