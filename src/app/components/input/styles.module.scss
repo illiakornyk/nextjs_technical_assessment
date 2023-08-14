@@ -1,0 +1,38 @@
+@use '@/styles/variables.scss';
+@use '@/styles/mixins.scss';
+
+.input {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+}
+
+.input__label {
+  font-size: 0.75rem;
+  color: variables.$gray-2;
+  font-weight: 500;
+  margin-bottom: 5px;
+
+  &--focused {
+    color: variables.$black;
+  }
+}
+
+.input__field {
+  border: none;
+  background: none;
+
+  border-bottom: 1px solid variables.$gray-2;
+  color: variables.$black;
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  padding-bottom: 10px;
+  padding-left: 2px;
+
+  &:focus {
+    outline: none;
+
+    border-bottom-color: variables.$black;
+  }
+}

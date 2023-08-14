@@ -1,6 +1,10 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 import styles from './styles.module.scss';
+import TwitterIcon from '@/components/icons/socials/twitter';
+import InstagramIcon from '@/components/icons/socials/instagram';
+import DiscordIcon from '@/components/icons/socials/discord';
+import Input from '@/components/input';
 
 let cx = classNames.bind(styles);
 
@@ -24,16 +28,45 @@ export default function ContactUsPage() {
           </ul>
 
           <div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div>
+              <TwitterIcon />
+            </div>
+            <div>
+              <InstagramIcon />
+            </div>
+            <div>
+              <DiscordIcon />
+            </div>
           </div>
         </div>
         <div>
           <form
             action="
 			"
-          ></form>
+          >
+            <Input
+              title="First Name"
+              id="firstName"
+              name="firstName"
+              placeholder="John"
+            />
+
+            <Input
+              title="Last Name"
+              id="lastName"
+              name="lastName"
+              placeholder="Doe"
+            />
+
+            <Input title="Email" id="email" name="email" type="email" />
+
+            <Input
+              title="Phone Number"
+              id="phoneNumber"
+              name="phoneNumber"
+              placeholder="+1 012 3456 789"
+            />
+          </form>
         </div>
       </div>
     </div>
