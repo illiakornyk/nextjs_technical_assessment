@@ -6,6 +6,7 @@ import InstagramIcon from '@/components/icons/socials/instagram';
 import DiscordIcon from '@/components/icons/socials/discord';
 import Input from '@/components/input';
 import RadioButton from '@/components/radioButton';
+import Button from '@/components/button';
 
 let cx = classNames.bind(styles);
 
@@ -78,6 +79,15 @@ export default function ContactUsPage() {
                 { label: 'Support Inquiry', value: 'support' },
               ]}
             />
+
+            <Input
+              title="Message"
+              id="message"
+              name="message"
+              placeholder="Write your message.."
+            />
+
+            <Button>Send Message</Button>
           </form>
         </div>
       </div>
