@@ -1,0 +1,49 @@
+@use '@/styles/variables.scss';
+@use '@/styles/mixins.scss';
+
+.radio {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  color: variables.$black;
+}
+
+.radio__label {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.radio__block {
+  display: flex;
+  align-items: center;
+}
+
+.radio__option {
+  // Hide the default radio button
+  position: absolute;
+  opacity: 0;
+}
+
+.radio__custom {
+  // Style the custom radio button
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: variables.$gray-3;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radio__option:checked + .radio__option-label .radio__custom {
+  // Style the custom radio button when it is checked
+  background-color: variables.$black;
+}
+
+.radio__option-label {
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

@@ -5,6 +5,7 @@ import TwitterIcon from '@/components/icons/socials/twitter';
 import InstagramIcon from '@/components/icons/socials/instagram';
 import DiscordIcon from '@/components/icons/socials/discord';
 import Input from '@/components/input';
+import RadioButton from '@/components/radioButton';
 
 let cx = classNames.bind(styles);
 
@@ -65,6 +66,17 @@ export default function ContactUsPage() {
               id="phoneNumber"
               name="phoneNumber"
               placeholder="+1 012 3456 789"
+            />
+
+            <RadioButton
+              title="Select Subject?"
+              id="subject"
+              name="subject"
+              options={[
+                { label: 'General Inquiry', value: 'general' },
+                { label: 'Sales Inquiry', value: 'sales' },
+                { label: 'Support Inquiry', value: 'support' },
+              ]}
             />
           </form>
         </div>
