@@ -23,7 +23,7 @@ const Input: React.FC<IInputProps> = ({
   const [isFocused, setIsFocused] = useState(false);
 
   return (
-    <div className={cx('input')}>
+    <div className={cx('input', className)}>
       {title && (
         <label
           htmlFor={id}
@@ -38,7 +38,7 @@ const Input: React.FC<IInputProps> = ({
         id={id}
         name={name}
         placeholder={placeholder}
-        className={cx('input__field', className)}
+        className={cx('input__field')}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
       />

@@ -114,6 +114,7 @@ export default function ContactUsPage() {
             </div>
             <div className={cx('contact-us__form-radio-buttons-and-message')}>
               <RadioButton
+                className={cx('contact-us__form-radio-button')}
                 title="Select Subject?"
                 id="subject"
                 name="subject"
@@ -129,6 +130,7 @@ export default function ContactUsPage() {
                 id="message"
                 name="message"
                 placeholder="Write your message.."
+                className={cx('contact-us__form-message-input')}
               />
 
               <Button className={cx('contact-us__form-submit-button')}>

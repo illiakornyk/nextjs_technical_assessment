@@ -25,34 +25,36 @@ const RadioButton: React.FC<IRadioButtonProps> = ({
   );
 
   return (
-    <div className={cx('radio')}>
+    <div className={cx('radio', className)}>
       {title && (
         <label htmlFor={id} className={cx('radio__label')}>
           {title}
         </label>
       )}
 
-      {options.map((option) => (
-        <div key={option.value} className={cx('radio__block', className)}>
-          <input
-            type="radio"
-            id={`${id}-${option.value}`}
-            name={name}
-            value={option.value}
-            className={cx('radio__option', className)}
-            onChange={() => setSelectedValue(option.value)}
-          />
-          <label
-            htmlFor={`${id}-${option.value}`}
-            className={cx('radio__option-label', className)}
-          >
-            <span className={cx('radio__custom')}>
-              {selectedValue === option.value && <CheckMarkIcon />}
-            </span>
-            {option.label}
-          </label>
-        </div>
-      ))}
+      <div className={cx('radio__block-wrapper')}>
+        {options.map((option) => (
+          <div key={option.value} className={cx('radio__block')}>
+            <input
+              type="radio"
+              id={`${id}-${option.value}`}
+              name={name}
+              value={option.value}
+              className={cx('radio__option')}
+              onChange={() => setSelectedValue(option.value)}
+            />
+            <label
+              htmlFor={`${id}-${option.value}`}
+              className={cx('radio__option-label')}
+            >
+              <span className={cx('radio__custom')}>
+                {selectedValue === option.value && <CheckMarkIcon />}
+              </span>
+              {option.label}
+            </label>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
