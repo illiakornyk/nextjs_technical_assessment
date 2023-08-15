@@ -45,7 +45,7 @@ export default function ContactUsPage() {
               demo@gmail.com
             </li>
             <li className={cx('contact-us__contact-information-list-item')}>
-              <LocationMarkerIcon size={styles.iconSize} />
+              <LocationMarkerIcon size={'2.3rem'} />
               132 Dartmouth Street Boston, Massachusetts 02156 United States
             </li>
           </ul>
@@ -62,11 +62,27 @@ export default function ContactUsPage() {
                 hoverColor={styles.black}
               />
             </div>
-            <div className={cx('contact-us__contact-information-social-icon')}>
-              <InstagramIcon />
+            <div
+              className={cx(
+                'contact-us__contact-information-social-media-block',
+              )}
+            >
+              <HoverableIcon
+                icon={<InstagramIcon />}
+                color={styles.white}
+                hoverColor={styles.black}
+              />
             </div>
-            <div className={cx('contact-us__contact-information-social-icon')}>
-              <DiscordIcon />
+            <div
+              className={cx(
+                'contact-us__contact-information-social-media-block',
+              )}
+            >
+              <HoverableIcon
+                icon={<DiscordIcon />}
+                color={styles.white}
+                hoverColor={styles.black}
+              />
             </div>
           </div>
         </div>

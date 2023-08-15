@@ -1,6 +1,17 @@
 @use '@/styles/variables.scss';
 @use '@/styles/mixins.scss';
 
+@mixin circle($size, $color, $bottom, $right) {
+  content: '';
+  position: absolute;
+  background: $color;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  bottom: $bottom;
+  right: $right;
+}
+
 .contact-us {
   &-page {
     display: flex;
@@ -32,13 +43,28 @@
     flex-direction: column;
     background: variables.$black;
     color: variables.$white;
+    padding: 2.5rem;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      @include circle(8.625rem, variables.$gray-6, 4.375rem, 4.375rem);
+    }
+
+    &::before {
+      @include circle(16.8125rem, variables.$dark-2, -5.3rem, -5.5rem);
+    }
 
     &-title {
       font-size: 1.75rem;
       font-weight: 600;
+      margin: 0;
     }
 
     &-subtext {
+      margin-top: 6px;
       color: variables.$gray-7;
       font-size: 1.125rem;
     }
@@ -50,6 +76,8 @@
       list-style: none;
       padding: 0;
       margin: 0;
+      margin-top: 7rem;
+      max-width: 67%;
 
       &-item {
         display: flex;
@@ -61,6 +89,9 @@
 
     &-socials {
       display: flex;
+      gap: 1.5rem;
+
+      margin-top: 9.5rem;
     }
 
     &-social-media-block {
@@ -68,7 +99,7 @@
       height: variables.$iconCircle;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-end;
       border-radius: 50%;
       background: variables.$black;
       transition: background-color 0.3s ease-in-out;
@@ -79,9 +110,6 @@
     }
 
     &-social-icon {
-      &--active {
-        color: variables.$black;
-      }
     }
   }
 }
