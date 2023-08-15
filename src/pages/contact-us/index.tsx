@@ -1,5 +1,7 @@
-import classNames from 'classnames/bind';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
+
+import classNames from 'classnames/bind';
 import styles from './styles.module.scss';
 import TwitterIcon from '@/components/icons/socials/twitter';
 import InstagramIcon from '@/components/icons/socials/instagram';
@@ -10,7 +12,7 @@ import Button from '@/components/button';
 import PhoneIcon from '@/components/icons/miscellaneous/phone';
 import EnvelopeIcon from '@/components/icons/miscellaneous/envelope';
 import LocationMarkerIcon from '@/components/icons/miscellaneous/locationMarker';
-import { useEffect } from 'react';
+import HoverableIcon from '@/components/icons/hoverableIcon';
 
 let cx = classNames.bind(styles);
 
@@ -54,21 +56,17 @@ export default function ContactUsPage() {
                 'contact-us__contact-information-social-media-block',
               )}
             >
-              <TwitterIcon color={styles.white} />
+              <HoverableIcon
+                icon={<TwitterIcon />}
+                color={styles.white}
+                hoverColor={styles.black}
+              />
             </div>
-            <div
-              className={cx(
-                'contact-us__contact-information-social-media-block',
-              )}
-            >
-              <InstagramIcon color={styles.white} />
+            <div className={cx('contact-us__contact-information-social-icon')}>
+              <InstagramIcon />
             </div>
-            <div
-              className={cx(
-                'contact-us__contact-information-social-media-block',
-              )}
-            >
-              <DiscordIcon color={styles.white} />
+            <div className={cx('contact-us__contact-information-social-icon')}>
+              <DiscordIcon />
             </div>
           </div>
         </div>

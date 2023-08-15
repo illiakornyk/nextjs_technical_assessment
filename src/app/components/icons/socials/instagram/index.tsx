@@ -5,6 +5,7 @@ const InstagramIcon: React.FC<IIconProps> = ({
   color = '#0F0F0F',
   size = '1rem',
   className,
+  ...props
 }) => {
   const width = typeof size === 'string' ? size : size.width;
   const height = typeof size === 'string' ? size : size.height;
@@ -15,6 +16,7 @@ const InstagramIcon: React.FC<IIconProps> = ({
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
       className={className}
     >
       <path

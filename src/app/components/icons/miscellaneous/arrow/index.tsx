@@ -5,6 +5,7 @@ const ArrowIcon: React.FC<IIconProps> = ({
   color = '#000',
   size = '1rem',
   className,
+  ...props
 }) => {
   const width = typeof size === 'string' ? size : size.width;
   const height = typeof size === 'string' ? size : size.height;
@@ -16,6 +17,7 @@ const ArrowIcon: React.FC<IIconProps> = ({
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
+      {...props}
       className={className}
     >
       <title>arrow_down [#338]</title>
