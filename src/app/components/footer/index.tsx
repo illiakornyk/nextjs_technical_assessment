@@ -2,9 +2,9 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import Link from 'next/link';
 import styles from './styles.module.scss';
-import EnvelopeIcon from '@/components/icons/envelope';
-import LocationMarkerIcon from '@/components/icons/locationMarker';
-import PhoneIcon from '@/components/icons/phone';
+import EnvelopeIcon from '@/components/icons/miscellaneous/envelope';
+import LocationMarkerIcon from '@/components/icons/miscellaneous/locationMarker';
+import PhoneIcon from '@/components/icons/miscellaneous/phone';
 
 let cx = classNames.bind(styles);
 

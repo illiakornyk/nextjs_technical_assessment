@@ -8,10 +8,12 @@ type TIconSize = {
 interface ITwitterIconProps {
   color?: string;
   size?: TIconSize | string;
+  className?: string;
 }
 const TwitterIcon: React.FC<ITwitterIconProps> = ({
   color = '#000',
   size = '1rem',
+  className,
 }) => {
   const width = typeof size === 'string' ? size : size.width;
   const height = typeof size === 'string' ? size : size.height;
@@ -23,6 +25,7 @@ const TwitterIcon: React.FC<ITwitterIconProps> = ({
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
+      className={className}
     >
       <title>twitter [#154]</title>
       <desc>Created with Sketch.</desc>

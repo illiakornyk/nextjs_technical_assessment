@@ -2,9 +2,9 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import Link from 'next/link';
 import styles from './styles.module.scss';
-import UserIcon from '@/components/icons/user';
-import CartIcon from '@/components/icons/cart';
-import ArrowIcon from '@/components/icons/arrow';
+import UserIcon from '@/components/icons/miscellaneous/user';
+import CartIcon from '@/components/icons/miscellaneous/cart';
+import ArrowIcon from '@/components/icons/miscellaneous/arrow';
 import Dropdown from '@/components/dropdown';
 
 let cx = classNames.bind(styles);

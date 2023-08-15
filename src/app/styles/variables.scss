@@ -12,3 +12,14 @@ $gray-3: #e0e0e0;
 $gray-4: #616161;
 $gray-5: #292929;
 $gray-6: rgba(72, 72, 72, 0.5);
+$gray-7: #c9c9c9;
+
+$iconSize: 1.5rem;
+$iconCircle: 1.875rem;
+
+:export {
+  white: $white;
+  black: $black;
+  iconSize: $iconSize;
+  iconCircle: $iconCircle;
+}

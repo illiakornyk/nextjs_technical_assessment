@@ -8,10 +8,12 @@ type TIconSize = {
 interface IInstagramIconProps {
   color?: string;
   size?: TIconSize | string;
+  className?: string;
 }
 const InstagramIcon: React.FC<IInstagramIconProps> = ({
   color = '#0F0F0F',
   size = '1rem',
+  className,
 }) => {
   const width = typeof size === 'string' ? size : size.width;
   const height = typeof size === 'string' ? size : size.height;
@@ -22,6 +24,7 @@ const InstagramIcon: React.FC<IInstagramIconProps> = ({
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <path
         fill-rule="evenodd"
