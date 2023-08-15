@@ -1,16 +1,7 @@
 import React from 'react';
+import { IIconProps } from '@/types/icon';
 
-type TIconSize = {
-  width: string;
-  height: string;
-};
-
-interface ICheckMarkIconProps {
-  color?: string;
-  size?: TIconSize | string;
-  className?: string;
-}
-const CheckMarkIcon: React.FC<ICheckMarkIconProps> = ({
+const CheckMarkIcon: React.FC<IIconProps> = ({
   color = 'white',
   size = '1rem',
   className,

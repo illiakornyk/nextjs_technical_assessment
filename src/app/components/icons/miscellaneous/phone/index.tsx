@@ -1,15 +1,7 @@
 import React from 'react';
+import { IIconProps } from '@/types/icon';
 
-type TIconSize = {
-  width: string;
-  height: string;
-};
-
-interface IPhoneIconProps {
-  color?: string;
-  size?: TIconSize | string;
-}
-const PhoneIcon: React.FC<IPhoneIconProps> = ({
+const PhoneIcon: React.FC<IIconProps> = ({
   color = 'white',
   size = '1rem',
 }) => {

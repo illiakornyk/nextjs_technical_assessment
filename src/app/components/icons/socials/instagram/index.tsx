@@ -1,16 +1,7 @@
 import React from 'react';
+import { IIconProps } from '@/types/icon';
 
-type TIconSize = {
-  width: string;
-  height: string;
-};
-
-interface IInstagramIconProps {
-  color?: string;
-  size?: TIconSize | string;
-  className?: string;
-}
-const InstagramIcon: React.FC<IInstagramIconProps> = ({
+const InstagramIcon: React.FC<IIconProps> = ({
   color = '#0F0F0F',
   size = '1rem',
   className,

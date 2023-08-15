@@ -1,16 +1,7 @@
 import React from 'react';
+import { IIconProps } from '@/types/icon';
 
-type TIconSize = {
-  width: string;
-  height: string;
-};
-
-interface IArrowIconProps {
-  color?: string;
-  size?: TIconSize | string;
-  className?: string;
-}
-const ArrowIcon: React.FC<IArrowIconProps> = ({
+const ArrowIcon: React.FC<IIconProps> = ({
   color = '#000',
   size = '1rem',
   className,

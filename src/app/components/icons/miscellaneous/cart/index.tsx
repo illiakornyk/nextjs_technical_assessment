@@ -1,16 +1,8 @@
 import React from 'react';
 
-type TIconSize = {
-  width: string;
-  height: string;
-};
+import { IIconProps } from '@/types/icon';
 
-interface ICartIconProps {
-  color?: string;
-  size?: TIconSize | string;
-  className?: string;
-}
-const CartIcon: React.FC<ICartIconProps> = ({
+const CartIcon: React.FC<IIconProps> = ({
   color = '#000',
   size = '1rem',
   className,

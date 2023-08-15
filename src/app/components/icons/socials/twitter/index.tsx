@@ -1,16 +1,7 @@
 import React from 'react';
+import { IIconProps } from '@/types/icon';
 
-type TIconSize = {
-  width: string;
-  height: string;
-};
-
-interface ITwitterIconProps {
-  color?: string;
-  size?: TIconSize | string;
-  className?: string;
-}
-const TwitterIcon: React.FC<ITwitterIconProps> = ({
+const TwitterIcon: React.FC<IIconProps> = ({
   color = '#000',
   size = '1rem',
   className,

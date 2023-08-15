@@ -1,15 +1,7 @@
 import React from 'react';
+import { IIconProps } from '@/types/icon';
 
-type TIconSize = {
-  width: string;
-  height: string;
-};
-
-interface ILocationMarkerIconProps {
-  color?: string;
-  size?: TIconSize | string;
-}
-const LocationMarkerIcon: React.FC<ILocationMarkerIconProps> = ({
+const LocationMarkerIcon: React.FC<IIconProps> = ({
   color = 'white',
   size = '1rem',
 }) => {

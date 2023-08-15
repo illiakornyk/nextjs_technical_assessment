@@ -1,19 +1,7 @@
 import React from 'react';
+import { IIconProps } from '@/types/icon';
 
-type TIconSize = {
-  width: string;
-  height: string;
-};
-
-interface IUserIconProps {
-  color?: string;
-  size?: TIconSize | string;
-}
-
-const UserIcon: React.FC<IUserIconProps> = ({
-  color = '#000',
-  size = '1rem',
-}) => {
+const UserIcon: React.FC<IIconProps> = ({ color = '#000', size = '1rem' }) => {
   const width = typeof size === 'string' ? size : size.width;
   const height = typeof size === 'string' ? size : size.height;
   return (

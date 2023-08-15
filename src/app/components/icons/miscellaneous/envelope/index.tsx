@@ -1,16 +1,7 @@
 import React from 'react';
+import { IIconProps } from '@/types/icon';
 
-type TIconSize = {
-  width: string;
-  height: string;
-};
-
-interface IEnvelopeIconProps {
-  color?: string;
-  size?: TIconSize | string;
-  className?: string;
-}
-const EnvelopeIcon: React.FC<IEnvelopeIconProps> = ({
+const EnvelopeIcon: React.FC<IIconProps> = ({
   color = 'white',
   size = '1rem',
   className,
