@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
+import { useForm, Controller } from 'react-hook-form';
 import classNames from 'classnames/bind';
 import styles from './styles.module.scss';
 import TwitterIcon from '@/components/icons/socials/twitter';
@@ -17,6 +18,10 @@ import HoverableIcon from '@/components/icons/hoverableIcon';
 let cx = classNames.bind(styles);
 
 export default function ContactUsPage() {
+  const { handleSubmit, reset, watch, control, register } = useForm();
+
+  const onSubmit = (data: any) => console.log(data);
+
   return (
     <div className={cx('contact-us-page')}>
       <div className={cx('contact-us__header')}>
@@ -87,42 +92,93 @@ export default function ContactUsPage() {
           </div>
         </div>
         <div className={cx('contact-us__form-section')}>
-          <form className={cx('contact-us__form')}>
+          <form
+            className={cx('contact-us__form')}
+            onSubmit={handleSubmit(onSubmit)}
+          >
             <div className={cx('contact-us__form-inputs-block')}>
-              <Input
-                title="First Name"
-                id="firstName"
+              <Controller
+                render={({ field }) => {
+                  return (
+                    <Input
+                      title="First Name"
+                      id="firstName"
+                      placeholder="John"
+                      {...field}
+                    />
+                  );
+                }}
+                control={control}
                 name="firstName"
-                placeholder="John"
+                defaultValue={''}
               />
 
-              <Input
-                title="Last Name"
-                id="lastName"
+              <Controller
+                render={({ field }) => {
+                  return (
+                    <Input
+                      title="Last Name"
+                      id="lastName"
+                      placeholder="Doe"
+                      {...field}
+                    />
+                  );
+                }}
+                control={control}
                 name="lastName"
-                placeholder="Doe"
+                defaultValue={''}
               />
 
-              <Input title="Email" id="email" name="email" type="email" />
+              <Controller
+                render={({ field }) => {
+                  return (
+                    <Input title="Email" id="email" type="email" {...field} />
+                  );
+                }}
+                control={control}
+                name="email"
+                defaultValue={''}
+              />
 
-              <Input
-                title="Phone Number"
-                id="phoneNumber"
+              <Controller
+                render={({ field }) => {
+                  return (
+                    <Input
+                      title="Phone Number"
+                      id="phoneNumber"
+                      placeholder="+1 012 3456 789"
+                      {...field}
+                    />
+                  );
+                }}
+                control={control}
                 name="phoneNumber"
-                placeholder="+1 012 3456 789"
+                defaultValue={''}
               />
             </div>
             <div className={cx('contact-us__form-radio-buttons-and-message')}>
-              <RadioButton
-                className={cx('contact-us__form-radio-button')}
-                title="Select Subject?"
-                id="subject"
+              <Controller
+                render={({ field }) => {
+                  return (
+                    <RadioButton
+                      className={cx('contact-us__form-radio-button')}
+                      title="Select Subject?"
+                      id="subject"
+                      options={[
+                        {
+                          label: 'General Inquiry',
+                          value: 'general',
+                          checked: true,
+                        },
+                        { label: 'Sales Inquiry', value: 'sales' },
+                        { label: 'Support Inquiry', value: 'support' },
+                      ]}
+                      {...field}
+                    />
+                  );
+                }}
+                control={control}
                 name="subject"
-                options={[
-                  { label: 'General Inquiry', value: 'general', checked: true },
-                  { label: 'Sales Inquiry', value: 'sales' },
-                  { label: 'Support Inquiry', value: 'support' },
-                ]}
               />
 
               <Input
@@ -133,7 +189,10 @@ export default function ContactUsPage() {
                 className={cx('contact-us__form-message-input')}
               />
 
-              <Button className={cx('contact-us__form-submit-button')}>
+              <Button
+                className={cx('contact-us__form-submit-button')}
+                type="submit"
+              >
                 Send Message
               </Button>
             </div>

@@ -1,6 +1,7 @@
 import React, { InputHTMLAttributes, useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './styles.module.scss';
+import { useController } from 'react-hook-form';
 
 let cx = classNames.bind(styles);
 
@@ -16,9 +17,10 @@ const Input: React.FC<IInputProps> = ({
   title,
   id,
   placeholder,
-  name,
+  name = 'default',
   className,
   type = 'text',
+  ...props
 }) => {
   const [isFocused, setIsFocused] = useState(false);
 
@@ -41,6 +43,7 @@ const Input: React.FC<IInputProps> = ({
         className={cx('input__field')}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
+        {...props}
       />
     </div>
   );
