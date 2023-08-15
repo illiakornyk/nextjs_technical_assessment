@@ -119,7 +119,7 @@ export default function ContactUsPage() {
                 id="subject"
                 name="subject"
                 options={[
-                  { label: 'General Inquiry', value: 'general' },
+                  { label: 'General Inquiry', value: 'general', checked: true },
                   { label: 'Sales Inquiry', value: 'sales' },
                   { label: 'Support Inquiry', value: 'support' },
                 ]}

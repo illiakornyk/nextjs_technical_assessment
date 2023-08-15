@@ -5,12 +5,14 @@ import CheckMarkIcon from '@/components/icons/miscellaneous/check';
 
 let cx = classNames.bind(styles);
 
+type TRadioButtonOption = { label: string; value: string; checked?: boolean };
+
 interface IRadioButtonProps extends InputHTMLAttributes<HTMLInputElement> {
   title?: string;
   id?: string;
   name?: string;
   className?: string;
-  options: { label: string; value: string }[];
+  options: TRadioButtonOption[];
 }
 
 const RadioButton: React.FC<IRadioButtonProps> = ({
@@ -20,8 +22,9 @@ const RadioButton: React.FC<IRadioButtonProps> = ({
   className,
   options,
 }) => {
+  const defaultCheckedOption = options.find((option) => option.checked);
   const [selectedValue, setSelectedValue] = useState<string | undefined>(
-    undefined,
+    defaultCheckedOption?.value,
   );
 
   return (
@@ -42,13 +45,14 @@ const RadioButton: React.FC<IRadioButtonProps> = ({
               value={option.value}
               className={cx('radio__option')}
               onChange={() => setSelectedValue(option.value)}
+              checked={selectedValue === option.value}
             />
             <label
               htmlFor={`${id}-${option.value}`}
               className={cx('radio__option-label')}
             >
               <span className={cx('radio__custom')}>
-                {selectedValue === option.value && <CheckMarkIcon />}
+                {selectedValue === option.value ? <CheckMarkIcon /> : null}
               </span>
               {option.label}
             </label>
