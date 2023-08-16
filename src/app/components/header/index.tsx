@@ -16,14 +16,10 @@ let cx = classNames.bind(styles);
 interface IHeaderProps {}
 
 const Header: React.FC<IHeaderProps> = () => {
-  const handleSelect = (option: string) => {
-    console.log(`Selected option: ${option}`);
-  };
+  const windowWidth = useWindowWidth();
+  const [showMenu, setShowMenu] = useState(false);
 
   const dropdownOptions = ['Feature 1', 'Feature 2', 'Feature 3'];
-  const windowWidth = useWindowWidth();
-
-  const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
     if (Number(windowWidth) > 1023 && showMenu) {
@@ -35,6 +31,10 @@ const Header: React.FC<IHeaderProps> = () => {
       document.body.classList.remove('no-scroll');
     }
   }, [showMenu, windowWidth]);
+
+  const handleSelect = (option: string) => {
+    console.log(`Selected option: ${option}`);
+  };
 
   return (
     <header className={cx('header')}>
