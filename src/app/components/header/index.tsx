@@ -9,6 +9,7 @@ import Dropdown from '@/components/dropdown';
 import MenuIcon from '@/components/icons/miscellaneous/menu';
 import CrossIcon from '@/components/icons/miscellaneous/cross';
 import { getIconSize } from '@/components/header/helper';
+import { useWindowWidth } from '@/hooks/useWindowWidth';
 
 let cx = classNames.bind(styles);
 
@@ -20,16 +21,20 @@ const Header: React.FC<IHeaderProps> = () => {
   };
 
   const dropdownOptions = ['Feature 1', 'Feature 2', 'Feature 3'];
+  const windowWidth = useWindowWidth();
 
   const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
+    if (Number(windowWidth) > 1023 && showMenu) {
+      setShowMenu(false);
+    }
     if (showMenu) {
       document.body.classList.add('no-scroll');
     } else {
       document.body.classList.remove('no-scroll');
     }
-  }, [showMenu]);
+  }, [showMenu, windowWidth]);
 
   return (
     <header className={cx('header')}>
