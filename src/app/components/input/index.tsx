@@ -1,7 +1,6 @@
 import React, { InputHTMLAttributes, useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './styles.module.scss';
-import { useController } from 'react-hook-form';
 
 let cx = classNames.bind(styles);
 

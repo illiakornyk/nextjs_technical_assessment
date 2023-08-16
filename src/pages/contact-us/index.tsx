@@ -157,36 +157,98 @@ export default function ContactUsPage() {
               />
             </div>
             <div className={cx('contact-us__form-radio-buttons-and-message')}>
+              <div className={cx('contact-us__form-radio-buttons-section')}>
+                <span
+                  className={cx('contact-us__form-radio-buttons-section-title')}
+                >
+                  Select Subject?
+                </span>
+
+                <div className={cx('contact-us__form-radio-buttons')}>
+                  <Controller
+                    render={({ field }) => {
+                      return (
+                        <RadioButton
+                          {...field}
+                          className={cx('contact-us__form-radio-button')}
+                          title="Select Subject?"
+                          id="subject1"
+                          label={'General Inquiry'}
+                          value={'general1'}
+                        />
+                      );
+                    }}
+                    control={control}
+                    name="subject"
+                  />
+
+                  <Controller
+                    render={({ field }) => {
+                      return (
+                        <RadioButton
+                          {...field}
+                          className={cx('contact-us__form-radio-button')}
+                          title="Select Subject?"
+                          id="subject1"
+                          label={'General Inquiry'}
+                          value={'general2'}
+                        />
+                      );
+                    }}
+                    control={control}
+                    name="subject"
+                  />
+
+                  <Controller
+                    render={({ field }) => {
+                      return (
+                        <RadioButton
+                          {...field}
+                          className={cx('contact-us__form-radio-button')}
+                          title="Select Subject?"
+                          id="subject1"
+                          label={'General Inquiry'}
+                          value={'general3'}
+                        />
+                      );
+                    }}
+                    control={control}
+                    name="subject"
+                  />
+
+                  <Controller
+                    render={({ field }) => {
+                      return (
+                        <RadioButton
+                          {...field}
+                          className={cx('contact-us__form-radio-button')}
+                          title="Select Subject?"
+                          id="subject1"
+                          label={'General Inquiry'}
+                          value={'general4'}
+                        />
+                      );
+                    }}
+                    control={control}
+                    name="subject"
+                  />
+                </div>
+              </div>
+
               <Controller
                 render={({ field }) => {
                   return (
-                    <RadioButton
-                      className={cx('contact-us__form-radio-button')}
-                      title="Select Subject?"
-                      id="subject"
-                      options={[
-                        {
-                          label: 'General Inquiry',
-                          value: 'general',
-                          checked: true,
-                        },
-                        { label: 'Sales Inquiry', value: 'sales' },
-                        { label: 'Support Inquiry', value: 'support' },
-                      ]}
+                    <Input
+                      title="Message"
+                      id="message"
+                      placeholder="Write your message.."
+                      className={cx('contact-us__form-message-input')}
                       {...field}
                     />
                   );
                 }}
                 control={control}
-                name="subject"
-              />
-
-              <Input
-                title="Message"
-                id="message"
                 name="message"
-                placeholder="Write your message.."
-                className={cx('contact-us__form-message-input')}
               />
 
               <Button
