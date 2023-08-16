@@ -5,6 +5,7 @@ import styles from './styles.module.scss';
 import EnvelopeIcon from '@/components/icons/miscellaneous/envelope';
 import LocationMarkerIcon from '@/components/icons/miscellaneous/locationMarker';
 import PhoneIcon from '@/components/icons/miscellaneous/phone';
+import Button from '@/components/button';
 
 let cx = classNames.bind(styles);
 

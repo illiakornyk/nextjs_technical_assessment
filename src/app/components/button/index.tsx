@@ -19,13 +19,9 @@ const Button: React.FC<IButtonProps> = ({
 }) => {
   return (
     <button
-      className={cx(
-        'button',
-        {
-          [`button-${variant}`]: variant,
-        },
-        className,
-      )}
+      className={cx(['button', className], {
+        [`button-${variant}`]: variant,
+      })}
       {...props}
     >
       {children}
