@@ -13,12 +13,16 @@
     @media (max-width: 1199px) {
       @content;
     }
-  } @else if $breakpoint == 'laptop-down' {
+  } @else if $breakpoint == 'laptop-large-down' {
     @media (max-width: 1399px) {
       @content;
     }
   } @else if $breakpoint == 'desktop-down' {
     @media (max-width: 1799px) {
+      @content;
+    }
+  } @else if $breakpoint == 'laptop' {
+    @media (max-width: 1023px) {
       @content;
     }
   }

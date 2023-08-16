@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { schema } from 'validation/schema';
-import { useForm, Controller } from 'react-hook-form';
 import classNames from 'classnames/bind';
+import { useForm, Controller } from 'react-hook-form';
+
+import { schema } from 'validation/schema';
 import styles from './styles.module.scss';
 import TwitterIcon from '@/components/icons/socials/twitter';
 import InstagramIcon from '@/components/icons/socials/instagram';
@@ -28,7 +29,9 @@ export default function ContactUsPage() {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
-  const onSubmit = (data: any) => console.log(data);
+  const onSubmit = (data: any) => {
+    console.log(data);
+  };
 
   return (
     <div className={cx('contact-us-page')}>
@@ -50,15 +53,24 @@ export default function ContactUsPage() {
 
           <ul className={cx('contact-us__contact-information-list')}>
             <li className={cx('contact-us__contact-information-list-item')}>
-              <PhoneIcon size={styles.iconSize} />
+              <PhoneIcon
+                size={styles.iconSize}
+                className={cx('contact-us__contact-information-list-item-icon')}
+              />
               +1012 3456 789
             </li>
             <li className={cx('contact-us__contact-information-list-item')}>
-              <EnvelopeIcon size={styles.iconSize} />
+              <EnvelopeIcon
+                size={styles.iconSize}
+                className={cx('contact-us__contact-information-list-item-icon')}
+              />
               demo@gmail.com
             </li>
             <li className={cx('contact-us__contact-information-list-item')}>
-              <LocationMarkerIcon size={'2.3rem'} />
+              <LocationMarkerIcon
+                size={styles.iconSize}
+                className={cx('contact-us__contact-information-list-item-icon')}
+              />
               132 Dartmouth Street Boston, Massachusetts 02156 United States
             </li>
           </ul>

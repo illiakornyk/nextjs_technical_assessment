@@ -20,6 +20,10 @@
   position: relative;
   gap: 6rem;
 
+  @include mixins.respond-to('tablet-landscape-down') {
+    flex-wrap: wrap;
+  }
+
   &::before {
     content: '';
     position: absolute;
