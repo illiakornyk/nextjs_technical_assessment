@@ -144,6 +144,14 @@
     &-radio-buttons {
       display: flex;
       gap: 1.25rem;
+
+      position: relative;
+
+      &-error {
+        @include mixins.errorSpan;
+        position: absolute;
+        top: 10%;
+      }
     }
 
     &-inputs-block {

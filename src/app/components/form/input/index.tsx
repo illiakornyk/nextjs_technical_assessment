@@ -10,6 +10,7 @@ interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
   placeholder?: string;
   name?: string;
   className?: string;
+  error?: string;
 }
 
 const Input: React.FC<IInputProps> = ({
@@ -19,6 +20,7 @@ const Input: React.FC<IInputProps> = ({
   name = 'default',
   className,
   type = 'text',
+  error,
   ...props
 }) => {
   const [isFocused, setIsFocused] = useState(false);
@@ -44,6 +46,7 @@ const Input: React.FC<IInputProps> = ({
         onBlur={() => setIsFocused(false)}
         {...props}
       />
+      {error ? <span className={cx('input__error')}>{error}</span> : null}
     </div>
   );
 };

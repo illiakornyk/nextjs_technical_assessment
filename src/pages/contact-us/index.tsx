@@ -112,6 +112,7 @@ export default function ContactUsPage() {
                       title="First Name"
                       id="firstName"
                       placeholder="John"
+                      error={errors.firstName?.message}
                       {...field}
                     />
                   );
@@ -128,6 +129,7 @@ export default function ContactUsPage() {
                       title="Last Name"
                       id="lastName"
                       placeholder="Doe"
+                      error={errors.lastName?.message}
                       {...field}
                     />
                   );
@@ -140,7 +142,13 @@ export default function ContactUsPage() {
               <Controller
                 render={({ field }) => {
                   return (
-                    <Input title="Email" id="email" type="email" {...field} />
+                    <Input
+                      title="Email"
+                      id="email"
+                      type="email"
+                      error={errors.email?.message}
+                      {...field}
+                    />
                   );
                 }}
                 control={control}
@@ -155,6 +163,7 @@ export default function ContactUsPage() {
                       title="Phone Number"
                       id="phoneNumber"
                       placeholder="+1 012 3456 789"
+                      error={errors.phoneNumber?.message}
                       {...field}
                     />
                   );
@@ -173,6 +182,14 @@ export default function ContactUsPage() {
                 </span>
 
                 <div className={cx('contact-us__form-radio-buttons')}>
+                  {errors.subject?.message ? (
+                    <span
+                      className={cx('contact-us__form-radio-buttons-error')}
+                    >
+                      {errors.subject.message}
+                    </span>
+                  ) : null}
+
                   <Controller
                     render={({ field }) => {
                       return (
@@ -182,7 +199,7 @@ export default function ContactUsPage() {
                           title="Select Subject?"
                           id="subject1"
                           label={'General Inquiry'}
-                          value={'general1'}
+                          value={'subject1'}
                         />
                       );
                     }}
@@ -199,7 +216,7 @@ export default function ContactUsPage() {
                           title="Select Subject?"
                           id="subject1"
                           label={'General Inquiry'}
-                          value={'general2'}
+                          value={'subject2'}
                         />
                       );
                     }}
@@ -216,7 +233,7 @@ export default function ContactUsPage() {
                           title="Select Subject?"
                           id="subject1"
                           label={'General Inquiry'}
-                          value={'general3'}
+                          value={'subject3'}
                         />
                       );
                     }}
@@ -233,7 +250,7 @@ export default function ContactUsPage() {
                           title="Select Subject?"
                           id="subject1"
                           label={'General Inquiry'}
-                          value={'general4'}
+                          value={'subject4'}
                         />
                       );
                     }}
@@ -251,6 +268,7 @@ export default function ContactUsPage() {
                       id="message"
                       placeholder="Write your message.."
                       className={cx('contact-us__form-message-input')}
+                      error={errors.message?.message}
                       {...field}
                     />
                   );
