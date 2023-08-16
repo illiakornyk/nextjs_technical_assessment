@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-
+import { yupResolver } from '@hookform/resolvers/yup';
+import { schema } from 'validation/schema';
 import { useForm, Controller } from 'react-hook-form';
 import classNames from 'classnames/bind';
 import styles from './styles.module.scss';
 import TwitterIcon from '@/components/icons/socials/twitter';
 import InstagramIcon from '@/components/icons/socials/instagram';
 import DiscordIcon from '@/components/icons/socials/discord';
-import Input from '@/components/input';
-import RadioButton from '@/components/radioButton';
+import Input from '@/components/form/input';
+import RadioButton from '@/components/form/radioButton';
 import Button from '@/components/button';
 import PhoneIcon from '@/components/icons/miscellaneous/phone';
 import EnvelopeIcon from '@/components/icons/miscellaneous/envelope';
@@ -18,7 +19,14 @@ import HoverableIcon from '@/components/icons/hoverableIcon';
 let cx = classNames.bind(styles);
 
 export default function ContactUsPage() {
-  const { handleSubmit, reset, watch, control, register } = useForm();
+  const {
+    handleSubmit,
+    reset,
+    watch,
+    control,
+    register,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmit = (data: any) => console.log(data);
 
@@ -250,7 +258,6 @@ export default function ContactUsPage() {
                 control={control}
                 name="message"
               />
-
               <Button
                 className={cx('contact-us__form-submit-button')}
                 type="submit"

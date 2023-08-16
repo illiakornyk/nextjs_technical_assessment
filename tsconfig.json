@@ -21,6 +21,7 @@
     ],
     "paths": {
       "@/*": ["./src/app/*"],
+      "validation/*": ["./src/app/components/form/validation/*"],
       "pages/*": ["./src/pages/*"]
     }
   },
