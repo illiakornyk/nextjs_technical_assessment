@@ -17,7 +17,7 @@ export const schema = yup.object().shape({
   phoneNumber: yup
     .string()
     .required('Phone number is required')
-    .matches(/^[0-9]+$/, 'Must be only digits')
+    .matches(/^\+?[0-9]+$/, 'Must be only digits or start with a +')
     .min(10)
     .max(15),
   subject: yup

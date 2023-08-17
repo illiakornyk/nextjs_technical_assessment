@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import classNames from 'classnames/bind';
 import Link from 'next/link';
+import classNames from 'classnames/bind';
 import styles from './styles.module.scss';
+
 import UserIcon from '@/components/icons/miscellaneous/user';
 import CartIcon from '@/components/icons/miscellaneous/cart';
 import ArrowIcon from '@/components/icons/miscellaneous/arrow';
@@ -36,6 +37,14 @@ const Header: React.FC<IHeaderProps> = () => {
     console.log(`Selected option: ${option}`);
   };
 
+  const showMenuHandler = () => {
+    setShowMenu(true);
+  };
+
+  const closeMenuHandler = () => {
+    setShowMenu(false);
+  };
+
   return (
     <header
       className={cx('header', {
@@ -48,9 +57,7 @@ const Header: React.FC<IHeaderProps> = () => {
       <MenuIcon
         className={cx('header__menu-icon')}
         size={styles.iconSize}
-        onClick={() => {
-          setShowMenu(true);
-        }}
+        onClick={showMenuHandler}
       />
 
       <div
@@ -67,9 +74,7 @@ const Header: React.FC<IHeaderProps> = () => {
             className={cx('header__close-menu-icon')}
             size={'1.5rem'}
             color={getIconColor(showMenu, styles)}
-            onClick={() => {
-              setShowMenu(false);
-            }}
+            onClick={closeMenuHandler}
           />
         </div>
         <ul className={cx('header__menu-list')}>
@@ -94,7 +99,7 @@ const Header: React.FC<IHeaderProps> = () => {
             <Link href="/shop">Shop</Link>
           </li>
           <li className={cx('header__menu-item')}>
-            <Link href="/about">About</Link>
+            <Link href="/thumbnail">About</Link>
           </li>
           <li className={cx('header__menu-item', 'header__menu-item--contact')}>
             <Link href="/contact">Contact</Link>

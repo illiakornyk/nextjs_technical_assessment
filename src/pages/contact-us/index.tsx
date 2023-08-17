@@ -6,6 +6,7 @@ import { useForm, Controller } from 'react-hook-form';
 
 import { schema } from 'validation/schema';
 import styles from './styles.module.scss';
+
 import TwitterIcon from '@/components/icons/socials/twitter';
 import InstagramIcon from '@/components/icons/socials/instagram';
 import DiscordIcon from '@/components/icons/socials/discord';
@@ -16,21 +17,30 @@ import PhoneIcon from '@/components/icons/miscellaneous/phone';
 import EnvelopeIcon from '@/components/icons/miscellaneous/envelope';
 import LocationMarkerIcon from '@/components/icons/miscellaneous/locationMarker';
 import HoverableIcon from '@/components/icons/hoverableIcon';
+import { composeMessage } from 'pages/contact-us/helper';
 
 let cx = classNames.bind(styles);
+
+export interface FormData {
+  email: string;
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+  subject: string;
+  message: string;
+}
 
 export default function ContactUsPage() {
   const {
     handleSubmit,
-    reset,
-    watch,
     control,
-    register,
     formState: { errors },
-  } = useForm({ resolver: yupResolver(schema) });
+  } = useForm<FormData>({ resolver: yupResolver(schema) });
 
-  const onSubmit = (data: any) => {
-    console.log(data);
+  const onSubmit = (data: FormData) => {
+    const message = composeMessage(data);
+    console.log(message);
+    alert(message);
   };
 
   return (
