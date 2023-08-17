@@ -37,7 +37,11 @@ const Header: React.FC<IHeaderProps> = () => {
   };
 
   return (
-    <header className={cx('header')}>
+    <header
+      className={cx('header', {
+        'header--responsive': showMenu,
+      })}
+    >
       <span className={cx('header__logo')}>
         <Link href="/">Logo Here</Link>
       </span>

@@ -3,7 +3,7 @@
 
 .header {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
   color: variables.$black;
@@ -13,7 +13,7 @@
     color: inherit;
   }
 
-  @include mixins.respond-to('laptop') {
+  &--responsive {
     color: variables.$white;
   }
 }
@@ -22,6 +22,14 @@
   font-family: 'Inter', sans-serif;
   font-weight: 900;
   font-size: 24px;
+
+  &--responsive {
+    display: none;
+
+    @include mixins.respond-to('laptop') {
+      display: flex;
+    }
+  }
 
   @include mixins.respond-to('laptop') {
     font-size: 1.125rem;
