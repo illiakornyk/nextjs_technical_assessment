@@ -94,7 +94,7 @@ const Header: React.FC<IHeaderProps> = () => {
             <Link href="/shop">Shop</Link>
           </li>
           <li className={cx('header__menu-item')}>
-            <Link href="/about">About</Link>
+            <Link href="/thumbnail">About</Link>
           </li>
           <li className={cx('header__menu-item', 'header__menu-item--contact')}>
             <Link href="/contact">Contact</Link>

@@ -22,10 +22,7 @@ let cx = classNames.bind(styles);
 export default function ContactUsPage() {
   const {
     handleSubmit,
-    reset,
-    watch,
     control,
-    register,
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
