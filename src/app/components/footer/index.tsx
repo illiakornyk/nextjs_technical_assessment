@@ -11,7 +11,7 @@ interface IFooterProps {}
 
 const Footer: React.FC<IFooterProps> = () => {
   return (
-    <header className={cx('footer')}>
+    <footer className={cx('footer')}>
       <div className={cx('footer__wrapper')}>
         <span className={cx('footer__logo')}>Logo Here</span>
 
@@ -83,7 +83,7 @@ const Footer: React.FC<IFooterProps> = () => {
           </div>
         </div>
       </div>
-    </header>
+    </footer>
   );
 };
 

@@ -102,7 +102,7 @@ const Header: React.FC<IHeaderProps> = () => {
             <Link href="/thumbnail">About</Link>
           </li>
           <li className={cx('header__menu-item', 'header__menu-item--contact')}>
-            <Link href="/contact">Contact</Link>
+            <Link href="/contact-us">Contact</Link>
           </li>
         </ul>
         <div className={cx('header__actions')}>
