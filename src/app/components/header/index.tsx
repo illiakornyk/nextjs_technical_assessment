@@ -8,7 +8,7 @@ import ArrowIcon from '@/components/icons/miscellaneous/arrow';
 import Dropdown from '@/components/dropdown';
 import MenuIcon from '@/components/icons/miscellaneous/menu';
 import CrossIcon from '@/components/icons/miscellaneous/cross';
-import { getIconSize } from '@/components/header/helper';
+import { getIconColor, getIconSize } from '@/components/header/helper';
 import { useWindowWidth } from '@/hooks/useWindowWidth';
 
 let cx = classNames.bind(styles);
@@ -48,18 +48,26 @@ const Header: React.FC<IHeaderProps> = () => {
           setShowMenu(true);
         }}
       />
+
       <div
         className={cx('header__menu', {
           'header__menu--responsive': showMenu,
         })}
       >
-        <CrossIcon
-          className={cx('header__close-menu-icon')}
-          size={'2rem'}
-          onClick={() => {
-            setShowMenu(false);
-          }}
-        />
+        <div className={cx('header__top-bar')}>
+          <span className={cx('header__logo', 'header__logo--responsive')}>
+            <Link href="/">Logo Here</Link>
+          </span>
+
+          <CrossIcon
+            className={cx('header__close-menu-icon')}
+            size={'1.5rem'}
+            color={getIconColor(showMenu, styles)}
+            onClick={() => {
+              setShowMenu(false);
+            }}
+          />
+        </div>
         <ul className={cx('header__menu-list')}>
           <li className={cx('header__menu-item')}>
             <Link href="/">Home</Link>
@@ -69,7 +77,10 @@ const Header: React.FC<IHeaderProps> = () => {
           >
             <Link href="/features">Features</Link>
             <Dropdown options={dropdownOptions} onSelect={handleSelect}>
-              <ArrowIcon size={'0.78em'} />
+              <ArrowIcon
+                size={'0.78em'}
+                color={getIconColor(showMenu, styles)}
+              />
             </Dropdown>
           </li>
           <li className={cx('header__menu-item')}>
@@ -87,10 +98,16 @@ const Header: React.FC<IHeaderProps> = () => {
         </ul>
         <div className={cx('header__actions')}>
           <button className={cx('header__actions-button')}>
-            <UserIcon size={getIconSize(showMenu)} />
+            <UserIcon
+              size={getIconSize(showMenu)}
+              color={getIconColor(showMenu, styles)}
+            />
           </button>
           <button className={cx('header__actions-button')}>
-            <CartIcon size={getIconSize(showMenu)} />
+            <CartIcon
+              size={getIconSize(showMenu)}
+              color={getIconColor(showMenu, styles)}
+            />
           </button>
         </div>
       </div>
