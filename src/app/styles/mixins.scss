@@ -1,12 +1,16 @@
 @use '@/styles/variables.scss';
 
-@mixin respond-to($breakpoint) {
+@mixin respond-to-width($breakpoint) {
   @if $breakpoint == 'phone-only' {
     @media (max-width: 599px) {
       @content;
     }
   } @else if $breakpoint == 'tablet-portrait-down' {
     @media (max-width: 899px) {
+      @content;
+    }
+  } @else if $breakpoint == 'laptop' {
+    @media (max-width: 1024px) {
       @content;
     }
   } @else if $breakpoint == 'tablet-landscape-down' {
@@ -21,8 +25,24 @@
     @media (max-width: 1799px) {
       @content;
     }
-  } @else if $breakpoint == 'laptop' {
-    @media (max-width: 1024px) {
+  }
+}
+
+@mixin respond-to-height($breakpoint) {
+  @if $breakpoint == 'small-mobile' {
+    @media (max-height: 812px) {
+      @content;
+    }
+  } @else if $breakpoint == 'medium-mobile-landscape' {
+    @media (max-height: 414px) {
+      @content;
+    }
+  } @else if $breakpoint == 'tablet' {
+    @media (max-height: 1024px) {
+      @content;
+    }
+  } @else if $breakpoint == 'desktop' {
+    @media (max-height: 1050px) {
       @content;
     }
   }

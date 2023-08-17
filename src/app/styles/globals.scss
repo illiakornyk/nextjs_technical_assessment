@@ -6,7 +6,7 @@ html {
   box-sizing: border-box;
   font-size: 16px;
 
-  @include mixins.respond-to('big-desktop-up') {
+  @include mixins.respond-to-width('big-desktop-up') {
     font-size: 14px;
   }
 }
