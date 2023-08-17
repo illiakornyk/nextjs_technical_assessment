@@ -1,0 +1,13 @@
+@use '@/styles/variables.scss';
+@use '@/styles/mixins.scss';
+
+.dropdown__list {
+  width: 100%;
+  position: absolute;
+  left: 2rem;
+
+  padding: 0;
+  list-style: none;
+  background: inherit;
+  color: inherit;
+}

@@ -1,3 +1,5 @@
+@use '@/styles/variables.scss';
+
 @mixin respond-to($breakpoint) {
   @if $breakpoint == 'phone-only' {
     @media (max-width: 599px) {
@@ -11,9 +13,22 @@
     @media (max-width: 1199px) {
       @content;
     }
+  } @else if $breakpoint == 'laptop-large-down' {
+    @media (max-width: 1399px) {
+      @content;
+    }
   } @else if $breakpoint == 'desktop-down' {
     @media (max-width: 1799px) {
       @content;
     }
+  } @else if $breakpoint == 'laptop' {
+    @media (max-width: 1024px) {
+      @content;
+    }
   }
+}
+
+@mixin errorSpan {
+  font-size: 0.8rem;
+  color: variables.$red;
 }

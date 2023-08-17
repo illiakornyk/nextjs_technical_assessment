@@ -1,4 +1,10 @@
+import Header from '@/components/header';
+import classNames from 'classnames/bind';
 import React from 'react';
+import styles from './styles.module.scss';
+import Footer from '@/components/footer';
+
+let cx = classNames.bind(styles);
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -12,11 +18,13 @@ const Layout: React.FC<LayoutProps> = ({
   if (useStandardLayout) {
     // Render the standard layout
     return (
-      <>
-        <header>header</header>
-        <main>{children}</main>
-        <footer>footer</footer>
-      </>
+      <div className={cx('layout')}>
+        <div className={cx('layout__wrapper')}>
+          <Header />
+          <main>{children}</main>
+        </div>
+        <Footer />
+      </div>
     );
   } else {
     // Render a custom layout for specific pages

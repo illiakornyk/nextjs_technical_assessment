@@ -1,0 +1,10 @@
+@use '@/styles/variables.scss';
+@use '@/styles/mixins.scss';
+
+.layout__wrapper {
+  margin: 2.5rem 6.45rem 0 6.45rem;
+
+  @include mixins.respond-to('laptop') {
+    margin: 1.81rem 1.25rem;
+  }
+}

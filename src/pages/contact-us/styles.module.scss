@@ -1,0 +1,314 @@
+@use '@/styles/variables.scss';
+@use '@/styles/mixins.scss';
+
+@mixin circle($size, $color, $bottom, $right) {
+  content: '';
+  position: absolute;
+  background: $color;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  bottom: $bottom;
+  right: $right;
+}
+
+.contact-us {
+  &-page {
+    display: flex;
+    flex-direction: column;
+    gap: 3.75rem;
+    font-family: 'Poppins', sans-serif;
+
+    @include mixins.respond-to('laptop') {
+      gap: 1.5rem;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin: 0;
+
+    margin-top: 2rem;
+
+    @include mixins.respond-to('laptop') {
+      margin-top: 10px;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__description {
+    color: variables.$gray-1;
+    font-size: 1.125rem;
+    font-weight: 500;
+    text-align: center;
+    margin: 0;
+
+    @include mixins.respond-to('laptop') {
+      font-size: 0.875rem;
+      margin: 0 auto;
+      width: 80%;
+    }
+  }
+
+  &__form-block {
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    margin: 0 1.375rem;
+    margin-bottom: 3.3rem;
+
+    @include mixins.respond-to('laptop') {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      margin: 0 5px;
+    }
+  }
+
+  &__contact-information {
+    display: flex;
+    flex-direction: column;
+    background: variables.$black;
+    color: variables.$white;
+    padding: 2.5rem;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    position: relative;
+    overflow: hidden;
+
+    @include mixins.respond-to('laptop') {
+      align-items: center;
+      padding: 0.9rem 3.1rem;
+    }
+
+    &::after {
+      @include circle(8.625rem, variables.$gray-6, 4.375rem, 4.375rem);
+
+      @include mixins.respond-to('laptop') {
+        @include circle(3.375rem, variables.$gray-6, 5.687rem, 3.687rem);
+      }
+    }
+
+    &::before {
+      @include circle(16.8125rem, variables.$dark-2, -5.3rem, -5.5rem);
+
+      @include mixins.respond-to('laptop') {
+        @include circle(12rem, variables.$dark-2, -3.72rem, -3.92rem);
+      }
+    }
+
+    &-title {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin: 0;
+
+      @include mixins.respond-to('laptop') {
+        font-size: 1.25rem;
+      }
+    }
+
+    &-subtext {
+      margin-top: 6px;
+      color: variables.$gray-7;
+      font-size: 1.125rem;
+
+      @include mixins.respond-to('laptop') {
+        font-size: 0.68rem;
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin-top: 7rem;
+      max-width: 67%;
+
+      @include mixins.respond-to('laptop') {
+        gap: 0.9rem;
+        margin-top: 0.75rem;
+      }
+
+      &-item {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        font-size: 1rem;
+
+        @include mixins.respond-to('laptop') {
+          display: flex;
+          flex-direction: column;
+          gap: 0.625rem;
+        }
+
+        &-icon {
+          flex-shrink: 0;
+        }
+      }
+    }
+
+    &-socials {
+      display: flex;
+      gap: 1.5rem;
+      z-index: 0;
+
+      margin-top: 9.5rem;
+
+      @include mixins.respond-to('laptop') {
+        margin-top: 3.6rem;
+      }
+    }
+
+    &-social-media-block {
+      width: variables.$iconCircle;
+      height: variables.$iconCircle;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      border-radius: 50%;
+      background: variables.$black;
+      transition: background-color 0.3s ease-in-out;
+
+      &:hover {
+        background: variables.$white;
+      }
+    }
+
+    &-social-icon {
+    }
+  }
+
+  &__form-section {
+    width: 100%;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    padding: 3.375rem 3.125rem;
+
+    @include mixins.respond-to('laptop') {
+      padding: 1.85rem 1.31rem 7rem 1.31rem;
+    }
+
+    &-radio-buttons-section {
+      display: flex;
+      flex-direction: column;
+      margin-top: 2.8rem;
+
+      @include mixins.respond-to('laptop') {
+        margin-top: 1.5rem;
+      }
+
+      &-title {
+        font-size: 0.88rem;
+        font-weight: 600;
+
+        @include mixins.respond-to('laptop') {
+          text-align: left;
+        }
+      }
+    }
+
+    &-radio-buttons {
+      display: flex;
+      gap: 1.25rem;
+
+      position: relative;
+      margin-top: 2.8rem;
+
+      @include mixins.respond-to('laptop') {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 0.875rem 1.25rem;
+        margin-top: 0.625rem;
+      }
+
+      &-error {
+        @include mixins.errorSpan;
+        position: absolute;
+        top: 10%;
+
+        @include mixins.respond-to('laptop') {
+          top: -30%;
+        }
+      }
+    }
+
+    &-inputs-block {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.8rem 2.5rem;
+
+      @include mixins.respond-to('laptop') {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        gap: 1.25rem;
+      }
+    }
+
+    &-radio-buttons-and-message {
+      display: flex;
+      flex-direction: column;
+      @include mixins.respond-to('laptop') {
+        text-align: left;
+      }
+    }
+
+    &-radio-button {
+      //   margin-top: 2.8rem;
+    }
+
+    &-message-input {
+      margin-top: 2.8rem;
+
+      @include mixins.respond-to('laptop') {
+        margin-top: 1.5rem;
+      }
+    }
+
+    &-submit-button {
+      width: fit-content;
+      align-self: flex-end;
+      margin-top: 2.8rem;
+
+      position: relative;
+
+      @include mixins.respond-to('laptop') {
+        margin-top: 1.5rem;
+        width: 100%;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        bottom: -270%;
+        right: 40%;
+        z-index: -1;
+        background-image: url('/papper_plane.png');
+
+        background-size: cover;
+        width: 290px;
+        height: 120px;
+
+        transform: rotate(-30deg);
+
+        @include mixins.respond-to('laptop') {
+          bottom: -160%;
+          right: 50%;
+          width: 150px;
+          height: 52px;
+        }
+      }
+    }
+  }
+}

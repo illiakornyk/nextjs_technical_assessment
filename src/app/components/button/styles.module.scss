@@ -1,0 +1,31 @@
+@use '@/styles/variables.scss';
+@use '@/styles/mixins.scss';
+
+.button {
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  padding: 1rem 3rem;
+
+  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  border: none;
+
+  @include mixins.respond-to('laptop') {
+    padding: 0.56rem;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &-dark {
+    background: variables.$black;
+    color: variables.$white;
+  }
+
+  &-light {
+    background: variables.$white;
+    color: variables.$black;
+  }
+}
