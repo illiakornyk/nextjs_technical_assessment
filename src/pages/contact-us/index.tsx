@@ -17,7 +17,7 @@ import PhoneIcon from '@/components/icons/miscellaneous/phone';
 import EnvelopeIcon from '@/components/icons/miscellaneous/envelope';
 import LocationMarkerIcon from '@/components/icons/miscellaneous/locationMarker';
 import HoverableIcon from '@/components/icons/hoverableIcon';
-import { composeMessage } from 'pages/contact-us/helper';
+import { composeMessage } from 'helpers/contact-us/helper';
 
 let cx = classNames.bind(styles);
 
