@@ -11,7 +11,7 @@
   flex-direction: column;
   padding: 0 1.3rem 4.125rem 5rem;
 
-  @include mixins.respond-to('laptop') {
+  @include mixins.respond-to-width('laptop') {
     padding: 0 1.25rem;
     padding-bottom: 2.1rem;
   }
@@ -25,13 +25,13 @@
   position: relative;
   gap: 6rem;
 
-  @include mixins.respond-to('laptop') {
+  @include mixins.respond-to-width('laptop') {
     margin-top: 3.125rem;
     justify-content: center;
     gap: 2.5rem;
   }
 
-  @include mixins.respond-to('tablet-landscape-down') {
+  @include mixins.respond-to-width('tablet-landscape-down') {
     flex-wrap: wrap;
   }
 
@@ -51,7 +51,7 @@
 
   padding-left: 20px;
 
-  @include mixins.respond-to('laptop') {
+  @include mixins.respond-to-width('laptop') {
     display: grid;
     justify-items: center;
     align-items: baseline;
@@ -68,7 +68,7 @@
   font-family: 'Inter', sans-serif;
   text-align: center;
 
-  @include mixins.respond-to('laptop') {
+  @include mixins.respond-to-width('laptop') {
     margin-top: 1.18rem;
   }
 }
@@ -91,7 +91,7 @@
   font-size: 1.125rem;
   font-weight: 600;
 
-  @include mixins.respond-to('laptop') {
+  @include mixins.respond-to-width('laptop') {
     font-size: 1rem;
   }
 }
@@ -102,7 +102,7 @@
   display: flex;
   gap: 1.5rem;
 
-  @include mixins.respond-to('laptop') {
+  @include mixins.respond-to-width('laptop') {
     display: flex;
     flex-direction: column;
     font-size: 0.75rem;
@@ -118,11 +118,11 @@
 
   min-width: 19rem;
 
-  @include mixins.respond-to('laptop-down') {
+  @include mixins.respond-to-width('laptop-down') {
     min-width: fit-content;
   }
 
-  @include mixins.respond-to('laptop') {
+  @include mixins.respond-to-width('laptop') {
     padding: 17px 29px 14px 14px;
     width: 100%;
     min-width: auto;
@@ -136,7 +136,7 @@
   margin-top: 2rem;
   background: variables.$dark-4;
 
-  @include mixins.respond-to('laptop') {
+  @include mixins.respond-to-width('laptop') {
     margin-top: 1.43em;
   }
 }
@@ -187,7 +187,7 @@
 
   margin-top: 1.5rem;
 
-  @include mixins.respond-to('laptop') {
+  @include mixins.respond-to-width('laptop') {
     margin-top: 1.25rem;
   }
 }
@@ -197,7 +197,7 @@
   font-size: 1.125rem;
   color: variables.$white;
 
-  @include mixins.respond-to('laptop') {
+  @include mixins.respond-to-width('laptop') {
     font-size: 1rem;
   }
 }

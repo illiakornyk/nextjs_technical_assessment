@@ -26,12 +26,12 @@
   &--responsive {
     display: none;
 
-    @include mixins.respond-to('laptop') {
+    @include mixins.respond-to-width('laptop') {
       display: flex;
     }
   }
 
-  @include mixins.respond-to('laptop') {
+  @include mixins.respond-to-width('laptop') {
     font-size: 1.125rem;
   }
 }
@@ -45,7 +45,7 @@
   display: flex;
   gap: 2.9rem;
 
-  @include mixins.respond-to('laptop') {
+  @include mixins.respond-to-width('laptop') {
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -71,7 +71,7 @@
   display: flex;
   gap: 3.75rem;
 
-  @include mixins.respond-to('laptop') {
+  @include mixins.respond-to-width('laptop') {
     display: none;
   }
 
@@ -93,7 +93,7 @@
   }
 
   &-item {
-    @include mixins.respond-to('laptop') {
+    @include mixins.respond-to-width('laptop') {
       font-size: 0.875rem;
     }
   }
@@ -108,7 +108,7 @@
 .header__close-menu-icon {
   display: none;
 
-  @include mixins.respond-to('laptop') {
+  @include mixins.respond-to-width('laptop') {
     display: flex;
   }
 }
@@ -116,7 +116,7 @@
 .header__menu-icon {
   display: none;
 
-  @include mixins.respond-to('laptop') {
+  @include mixins.respond-to-width('laptop') {
     display: flex;
   }
 }
@@ -127,7 +127,7 @@
   gap: 2.25rem;
 
   justify-content: center;
-  @include mixins.respond-to('laptop') {
+  @include mixins.respond-to-width('laptop') {
   }
 }
 
@@ -142,7 +142,7 @@
   border-radius: 50%;
   border: 1px solid variables.$black;
 
-  @include mixins.respond-to('laptop') {
+  @include mixins.respond-to-width('laptop') {
     width: 1.9rem;
     height: 1.9rem;
 
