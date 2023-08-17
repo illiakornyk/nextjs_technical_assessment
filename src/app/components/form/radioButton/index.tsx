@@ -1,6 +1,8 @@
 import React, { InputHTMLAttributes, useState } from 'react';
 import classNames from 'classnames/bind';
+
 import styles from './styles.module.scss';
+
 import CheckMarkIcon from '@/components/icons/miscellaneous/check';
 
 let cx = classNames.bind(styles);

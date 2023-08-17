@@ -6,6 +6,7 @@ import { useForm, Controller } from 'react-hook-form';
 
 import { schema } from 'validation/schema';
 import styles from './styles.module.scss';
+
 import TwitterIcon from '@/components/icons/socials/twitter';
 import InstagramIcon from '@/components/icons/socials/instagram';
 import DiscordIcon from '@/components/icons/socials/discord';

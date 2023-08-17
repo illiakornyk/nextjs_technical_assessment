@@ -35,20 +35,29 @@ const Dropdown: React.FC<IDropdownProps> = ({
     setIsOpen(false);
   };
 
+  const handleDropdownClose = () => {
+    setIsOpen(false);
+  };
+
+  const handleDropdownOpen = () => {
+    setIsOpen(true);
+  };
+
+  const toggleDropdown = () => {
+    setIsOpen((prev) => !prev);
+  };
+
   return (
     <div ref={ref} className={cx('dropdown')}>
       <div
         className={cx('dropdown__trigger')}
-        onClick={() => setIsOpen(!isOpen)}
-        onMouseEnter={() => setIsOpen(true)}
+        onClick={toggleDropdown}
+        onMouseEnter={handleDropdownOpen}
       >
         {children}
       </div>
       {isOpen && (
-        <ul
-          className={cx('dropdown__list')}
-          onMouseLeave={() => setIsOpen(false)}
-        >
+        <ul className={cx('dropdown__list')} onMouseLeave={handleDropdownClose}>
           {options.map((option) => (
             <li
               key={option}

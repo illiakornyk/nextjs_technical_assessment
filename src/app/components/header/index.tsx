@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import classNames from 'classnames/bind';
 import Link from 'next/link';
+import classNames from 'classnames/bind';
 import styles from './styles.module.scss';
+
 import UserIcon from '@/components/icons/miscellaneous/user';
 import CartIcon from '@/components/icons/miscellaneous/cart';
 import ArrowIcon from '@/components/icons/miscellaneous/arrow';
