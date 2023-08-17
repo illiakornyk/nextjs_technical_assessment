@@ -1,34 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My Next.js and TypeScript Project
 
-## Getting Started
+This project is set up with a default Next.js project structure, enhanced with ESLint and Prettier for code quality, and organized into a clear and logical directory structure.
 
-First, run the development server:
+## Project Structure
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+The project is divided into two main directories: `public` and `src`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Public Directory
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The `public` directory contains all the static files for the project, such as images.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Src Directory
 
-## Learn More
+The `src` directory contains the application code and is divided into two subdirectories: `app` and `pages`.
 
-To learn more about Next.js, take a look at the following resources:
+#### App Directory
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The `app` directory contains the building blocks of the application. It includes the following subdirectories:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- `components`: This directory contains all the React components used in the application.
+- `hooks`: This directory contains custom React hooks.
+- `lib`: This directory is reserved for any libraries or utilities you might need in the future. Even though it's currently unused, it's often a good idea to keep it for architectural completeness.
+- `styles`: This directory contains all the styles for the application. The project uses CSS modules for styling, and this directory also includes some variables and mixins.
+- `types`: This directory contains TypeScript type definitions.
 
-## Deploy on Vercel
+#### Pages Directory
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The `pages` directory contains all the pages of the application. It includes a `/contact-us` folder for the Contact Us page, a `/thumbnail` page, and other pages as needed.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Libraries
+
+This project uses several libraries to enhance its functionality:
+
+- **React Hook Form**: This library is used for handling form state and interactions.
+- **Yup**: This library is used for form validation.
+- **Classnames**: This library is used for conveniently managing CSS classes based on conditions.
+
+## Navigation
+
+The application includes redirection to guide users through its flow. Users can visit the Thumbnail page by navigating to `/thumbnail` or by clicking on the "About" option in the header menu. Similarly, users can visit the Contact Us page by navigating to `/contact-us` or by clicking on the "Contact" option in the header menu.
