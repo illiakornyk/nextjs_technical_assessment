@@ -17,18 +17,30 @@ import PhoneIcon from '@/components/icons/miscellaneous/phone';
 import EnvelopeIcon from '@/components/icons/miscellaneous/envelope';
 import LocationMarkerIcon from '@/components/icons/miscellaneous/locationMarker';
 import HoverableIcon from '@/components/icons/hoverableIcon';
+import { composeMessage } from 'pages/contact-us/helper';
 
 let cx = classNames.bind(styles);
+
+export interface FormData {
+  email: string;
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+  subject: string;
+  message: string;
+}
 
 export default function ContactUsPage() {
   const {
     handleSubmit,
     control,
     formState: { errors },
-  } = useForm({ resolver: yupResolver(schema) });
+  } = useForm<FormData>({ resolver: yupResolver(schema) });
 
-  const onSubmit = (data: any) => {
-    console.log(data);
+  const onSubmit = (data: FormData) => {
+    const message = composeMessage(data);
+    console.log(message);
+    alert(message);
   };
 
   return (

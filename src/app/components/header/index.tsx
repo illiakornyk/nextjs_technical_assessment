@@ -37,6 +37,14 @@ const Header: React.FC<IHeaderProps> = () => {
     console.log(`Selected option: ${option}`);
   };
 
+  const showMenuHandler = () => {
+    setShowMenu(true);
+  };
+
+  const closeMenuHandler = () => {
+    setShowMenu(false);
+  };
+
   return (
     <header
       className={cx('header', {
@@ -49,9 +57,7 @@ const Header: React.FC<IHeaderProps> = () => {
       <MenuIcon
         className={cx('header__menu-icon')}
         size={styles.iconSize}
-        onClick={() => {
-          setShowMenu(true);
-        }}
+        onClick={showMenuHandler}
       />
 
       <div
@@ -68,9 +74,7 @@ const Header: React.FC<IHeaderProps> = () => {
             className={cx('header__close-menu-icon')}
             size={'1.5rem'}
             color={getIconColor(showMenu, styles)}
-            onClick={() => {
-              setShowMenu(false);
-            }}
+            onClick={closeMenuHandler}
           />
         </div>
         <ul className={cx('header__menu-list')}>
