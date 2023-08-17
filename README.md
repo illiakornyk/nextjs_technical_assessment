@@ -1,5 +1,3 @@
-# My Next.js and TypeScript Project
-
 This project is set up with a default Next.js project structure, enhanced with ESLint and Prettier for code quality, and organized into a clear and logical directory structure.
 
 ## Project Structure
@@ -19,10 +17,13 @@ The `src` directory contains the application code and is divided into two subdir
 The `app` directory contains the building blocks of the application. It includes the following subdirectories:
 
 - `components`: This directory contains all the React components used in the application.
+- `helpers`: This directory contains helper functions for the pages, such as mapping through an object or formatting data for display.
 - `hooks`: This directory contains custom React hooks.
 - `lib`: This directory is reserved for any libraries or utilities you might need in the future. Even though it's currently unused, it's often a good idea to keep it for architectural completeness.
 - `styles`: This directory contains all the styles for the application. The project uses CSS modules for styling, and this directory also includes some variables and mixins.
 - `types`: This directory contains TypeScript type definitions.
+
+Some components also have their own helper files, where some logic that is not directly related to the component is stored. For example, the `Thumbnail` component has a helper file that contains functions for generating random colors and sizes for the thumbnails.
 
 #### Pages Directory
 
@@ -39,3 +40,7 @@ This project uses several libraries to enhance its functionality:
 ## Navigation
 
 The application includes redirection to guide users through its flow. Users can visit the Thumbnail page by navigating to `/thumbnail` or by clicking on the "About" option in the header menu. Similarly, users can visit the Contact Us page by navigating to `/contact-us` or by clicking on the "Contact" option in the header menu.
+
+## Deployment
+
+The application is deployed on Vercel, which is a platform that supports Next.js projects very well. You can visit the app at this link: [https://nextjs-technical-assessment-illiakornyk.vercel.app/]
